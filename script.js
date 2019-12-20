@@ -10,7 +10,12 @@ function bookSearch(){
     dataType: "json",
 
     success: function(data) {
-      console.log(data)
+      for(i = 0; i < data.items.length; i++){
+        results.innerHTML += "<h2>" + data.items[i].volumeInfo.title + "</h2>"
+        results.innerHTML += "<h2>" + data.items[i].volumeInfo.description + "</h2>"
+        // results.innerHTML += "<src>" + data.items[i].volumeInfo.imageLinks.thumbnail + "</src>"
+      }
+      // console.log(data)
     },
 
     type: 'GET'
